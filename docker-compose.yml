@@ -1,0 +1,19 @@
+version: "3.9"
+
+services:
+    api:
+        container_name: "youtube-data-fetcher"
+        build: .
+        ports:
+            - 8000:8000
+        volumes:
+            - .:/usr/src/app
+        environment:
+            API_KEYS: AIzaSyBB2BTsyC0zKHrBIfTbxYxATknQDi4fAh0,AIzaSyDWGH6wk44bb0Aatuu0VsNJu5kfdSLM0SE,AIzaSyAmpNVENcM8KBCdlsqERhO1LatHbZ-C-yw,AIzaSyBeo1PwSxevR8e1FG70Nol8XlbUo3M6s3E,AIzaSyCcibZ3031EQazW-iPp0TBxl4eKykdYL8s,AIzaSyD7sdXjibTf7jKZVZRG3pll-3OZ5eRtkZ4,AIzaSyB-NGnLYJdPr5_lgBzrPlxi5NnLJaIN0qU,AIzaSyC15peXFAwo1o2ENlFY13672KSJmVh2Gx4,AIzaSyA2Zf8hUkrnHevWhuZLx6t1j_ahsQtnjtg,AIzaSyC4G3Bb9xPDldZb5KRp6uyj-H0dAitTd1M,AIzaSyA93AuypQTuKFQX5RtzDZ-YCA4DD82RX8s,AIzaSyA5TFzMvHcCOrMI7N2tSe3DJ4VzEgpyhD8,AIzaSyA9PWtywsKzHUo-y3wQ1Pc9qbnLvuhBQJQ,AIzaSyBK1kvN3Ba0gkJMxJ54xKId8jiDHQG1cPA,AIzaSyDabHiIQC6beoMCzDp9Iylwzv3T2rNV6Is,AIzaSyAk0Xw5a_rhefrXyiLofOeuwagaeyNACVo
+            PORT: 8000
+            FETCH_FREQUENCY: '* * * * *'
+            DB_NAME: dev
+            MONGO_URI: mongodb+srv://sjasani:IlFwyNBa7NgCAD1N@cluster0.fqqmmpa.mongodb.net/?retryWrites=true&w=majority
+            RUN_FETCH_CRON: true
+            DATA_LIMIT: 10
+            CRON_DATA_LIMIT: 50
